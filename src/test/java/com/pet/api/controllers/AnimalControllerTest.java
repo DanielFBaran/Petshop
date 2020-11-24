@@ -17,7 +17,6 @@ import org.springframework.boot.test.autoconfigure.web.servlet.AutoConfigureMock
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.boot.test.mock.mockito.MockBean;
 import org.springframework.http.MediaType;
-import org.springframework.security.test.context.support.WithMockUser;
 import org.springframework.test.context.ActiveProfiles;
 import org.springframework.test.context.junit4.SpringRunner;
 import org.springframework.test.web.servlet.MockMvc;
@@ -90,7 +89,6 @@ public class AnimalControllerTest {
 	}
 
 	@Test
-	@WithMockUser(roles = "USUARIO")
 	public void testBuscarPorIdSucesso() throws Exception {
 
 		Animal animal = CriarAnimalTestes();
@@ -113,7 +111,6 @@ public class AnimalControllerTest {
 	}
 
 	@Test
-	@WithMockUser(roles = "USUARIO")
 	public void testBuscarPorIdInconsistencia() throws Exception {
 
 		BDDMockito.given(animalService.buscarPorId((Mockito.anyInt())))
@@ -127,7 +124,6 @@ public class AnimalControllerTest {
 	}
 	
 	@Test
-	@WithMockUser(roles = "USUARIO")
 	public void testBuscarPorTipoSucesso() throws Exception {
 
 		
@@ -151,7 +147,6 @@ public class AnimalControllerTest {
 	}
 	
 	@Test
-	@WithMockUser(roles = "USUARIO")
 	public void testBuscarPorTipoInconsistencia() throws Exception {
 
 		BDDMockito.given(animalService.BuscarTipo(Mockito.anyString()))
@@ -166,7 +161,6 @@ public class AnimalControllerTest {
 	
 
 @Test
-@WithMockUser(roles = "USUARIO")
 public void testSalvarTipoEmBranco() throws Exception {
 
 	AnimalDto objEntrada = new AnimalDto();
@@ -188,7 +182,6 @@ public void testSalvarTipoEmBranco() throws Exception {
 }
 
 @Test
-@WithMockUser(roles = "USUARIO")
 public void testSalvarTipoInsuficiente() throws Exception {
 
 	AnimalDto objEntrada = new AnimalDto();
@@ -212,7 +205,6 @@ public void testSalvarTipoInsuficiente() throws Exception {
 }
 
 @Test
-@WithMockUser(roles = "USUARIO")
 public void testSalvarTipoExcedente() throws Exception {
 
 	AnimalDto objEntrada = new AnimalDto();
@@ -237,7 +229,6 @@ public void testSalvarTipoExcedente() throws Exception {
 
 
 @Test
-@WithMockUser(roles = "USUARIO")
 public void testSalvarRacaEmBranco() throws Exception {
 
 	AnimalDto objEntrada = new AnimalDto();
@@ -259,7 +250,6 @@ public void testSalvarRacaEmBranco() throws Exception {
 }
 
 @Test
-@WithMockUser(roles = "USUARIO")
 public void testSalvarRacaInsuficiente() throws Exception {
 
 	AnimalDto objEntrada = new AnimalDto();
@@ -282,7 +272,6 @@ public void testSalvarRacaInsuficiente() throws Exception {
 }
 
 @Test
-@WithMockUser(roles = "USUARIO")
 public void testSalvarRacaExcedente() throws Exception {
 
 	AnimalDto objEntrada = new AnimalDto();
@@ -306,7 +295,6 @@ public void testSalvarRacaExcedente() throws Exception {
 
 
 @Test
-@WithMockUser(roles = "USUARIO")
 public void testSalvarPorteEmBranco() throws Exception {
 
 	AnimalDto objEntrada = new AnimalDto();
@@ -328,7 +316,6 @@ public void testSalvarPorteEmBranco() throws Exception {
 }
 
 @Test
-@WithMockUser(roles = "USUARIO")
 public void testSalvarPorteInsuficiente() throws Exception {
 
 	AnimalDto objEntrada = new AnimalDto();
@@ -351,7 +338,6 @@ public void testSalvarPorteInsuficiente() throws Exception {
 }
 
 @Test
-@WithMockUser(roles = "USUARIO")
 public void testSalvarPorteExcedente() throws Exception {
 
 	AnimalDto objEntrada = new AnimalDto();
@@ -374,7 +360,6 @@ public void testSalvarPorteExcedente() throws Exception {
 }
 
 @Test
-@WithMockUser(roles = "USUARIO")
 public void testSalvarIdadeEmBranco() throws Exception {
 
 	AnimalDto objEntrada = new AnimalDto();
@@ -396,7 +381,6 @@ public void testSalvarIdadeEmBranco() throws Exception {
 }
 
 @Test
-@WithMockUser(roles = "USUARIO")
 public void testSalvarIdadeExcedente() throws Exception {
 
 	AnimalDto objEntrada = new AnimalDto();

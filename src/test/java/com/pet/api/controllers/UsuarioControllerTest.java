@@ -14,7 +14,6 @@ import org.springframework.boot.test.autoconfigure.web.servlet.AutoConfigureMock
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.boot.test.mock.mockito.MockBean;
 import org.springframework.http.MediaType;
-import org.springframework.security.test.context.support.WithMockUser;
 import org.springframework.test.context.ActiveProfiles;
 import org.springframework.test.context.junit4.SpringRunner;
 import org.springframework.test.web.servlet.MockMvc;
@@ -54,7 +53,6 @@ public class UsuarioControllerTest {
 	}
 
 	@Test
-	@WithMockUser(roles = "USUARIO")
 	public void testBuscarPorIdSucesso() throws Exception {
 
 		Usuario usuario = CriarUsuarioTestes();
@@ -75,7 +73,6 @@ public class UsuarioControllerTest {
 	}
 
 	@Test
-	@WithMockUser(roles = "USUARIO")
 	public void testBuscarPorIdInconsistencia() throws Exception {
 
 		BDDMockito.given(usuarioService.buscarPorId((Mockito.anyInt())))
@@ -89,7 +86,6 @@ public class UsuarioControllerTest {
 	}
 	
 @Test
-@WithMockUser(roles = "USUARIO")
 public void testSalvarNomeEmBranco() throws Exception {
 
 	UsuarioDto objEntrada = new UsuarioDto();
@@ -111,7 +107,6 @@ public void testSalvarNomeEmBranco() throws Exception {
 }
 
 @Test
-@WithMockUser(roles = "USUARIO")
 public void testSalvarNomeInsuficiente() throws Exception {
 
 	UsuarioDto objEntrada = new UsuarioDto();
@@ -133,7 +128,6 @@ public void testSalvarNomeInsuficiente() throws Exception {
 }
 
 @Test
-@WithMockUser(roles = "USUARIO")
 public void testSalvarNomeExcedente() throws Exception {
 
 	UsuarioDto objEntrada = new UsuarioDto();
@@ -156,7 +150,6 @@ public void testSalvarNomeExcedente() throws Exception {
 }
 
 @Test
-@WithMockUser(roles = "USUARIO")
 public void testSalvarSenhaEmBranco() throws Exception {
 
 	UsuarioDto objEntrada = new UsuarioDto();
@@ -178,7 +171,6 @@ public void testSalvarSenhaEmBranco() throws Exception {
 }
 
 @Test
-@WithMockUser(roles = "USUARIO")
 public void testSalvarSenhaInsuficiente() throws Exception {
 
 	UsuarioDto objEntrada = new UsuarioDto();
@@ -201,7 +193,6 @@ public void testSalvarSenhaInsuficiente() throws Exception {
 }
 
 @Test
-@WithMockUser(roles = "USUARIO")
 public void testSalvarSenhaExcedente() throws Exception {
 
 	UsuarioDto objEntrada = new UsuarioDto();
@@ -223,7 +214,6 @@ public void testSalvarSenhaExcedente() throws Exception {
 }
 
 @Test
-@WithMockUser(roles = "USUARIO")
 public void testSalvarEmailEmBranco() throws Exception {
 
 	UsuarioDto objEntrada = new UsuarioDto();
@@ -244,7 +234,6 @@ public void testSalvarEmailEmBranco() throws Exception {
 }
 
 @Test
-@WithMockUser(roles = "USUARIO")
 public void testSalvarTelefoneEmBranco() throws Exception {
 
     UsuarioDto objEntrada = new UsuarioDto();
@@ -265,7 +254,6 @@ public void testSalvarTelefoneEmBranco() throws Exception {
 }
 
 @Test
-@WithMockUser(roles = "USUARIO")
 public void testSalvarTelefoneExcedente() throws Exception {
 
 UsuarioDto objEntrada = new UsuarioDto();
@@ -286,7 +274,6 @@ UsuarioDto objEntrada = new UsuarioDto();
 
 }
 @Test
-@WithMockUser(roles = "USUARIO")
 public void testSalvarTelefoneInsuficiente() throws Exception {
 
 	UsuarioDto objEntrada = new UsuarioDto();
