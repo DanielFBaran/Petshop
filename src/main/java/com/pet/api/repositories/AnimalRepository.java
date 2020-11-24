@@ -20,7 +20,7 @@ public interface AnimalRepository extends JpaRepository<Animal, Integer> {
 	
 	@Transactional
    	@Modifying(clearAutomatically = true)
-   	@Query("SELECT a FROM Animal a INNER JOIN Usuario u ON a.id = u.id WHERE u.ativo = true AND a.ativo = true")
+   	@Query("SELECT a FROM Animal a INNER JOIN Usuario u ON a.usuario.id = u.id WHERE u.ativo = true AND a.ativo = true")
    	Optional<List<Animal>> listar();
    	
 	@Transactional
